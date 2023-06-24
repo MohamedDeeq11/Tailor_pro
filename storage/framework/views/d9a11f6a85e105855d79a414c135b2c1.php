@@ -45,6 +45,7 @@
 																			<td class="color-primary">$21.56</td>
 																			<td>
 																				<div class="d-flex">
+																					<a href="#" class="btn btn-warning shadow btn-xs sharp me-1" ><i class="fa fa-eye"></i></a>
 																					<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
 																					<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 																				</div>
@@ -59,6 +60,7 @@
 																			<td class="color-success">$55.32</td>
 																			<td>
 																				<div class="d-flex">
+																					<a href="#" class="btn btn-warning shadow btn-xs sharp me-1" ><i class="fa fa-eye"></i></a>
 																					<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
 																					<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 																				</div>
@@ -73,6 +75,7 @@
 																			<td class="text-danger">$14.85</td>
 																			<td>
 																				<div class="d-flex">
+																					<a href="#" class="btn btn-warning shadow btn-xs sharp me-1" ><i class="fa fa-eye"></i></a>
 																					<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
 																					<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 																				</div>

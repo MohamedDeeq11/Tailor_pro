@@ -48,5 +48,8 @@ return [
         'threads' => 1,
         'time' => 4,
     ],
-
+    'hashids' => [
+        'salt' => env('HASHIDS_SALT', 'your-salt-string'),
+        'length' => 10,
+    ],
 ];

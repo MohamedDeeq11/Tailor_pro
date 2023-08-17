@@ -22,7 +22,7 @@
 
 
 	<!-- Page Title Here -->
-	<title>Login</title>
+	<title>Tialor Pro</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
@@ -30,27 +30,29 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <link href="css/style.css" rel="stylesheet">
 
+
 </head>
+
 
 <body class="body  h-100">
 	<div class="authincation d-flex flex-column flex-lg-row flex-column-fluid">
-		<div class="login-aside text-center  d-flex flex-column flex-row-auto">
-			<div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+		<div class="login-aside text-center  d-flex flex-column flex-row-auto"  >
+			<div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15" >
 				<div class="text-center mb-lg-4 mb-2 pt-5 logo">
-					<img src="{{url('images/logo/AL-02.png')}}" alt="" style="width:300px;heigh:200px">
+					<img src="{{url('images/logo/AL-04.png')}}" alt="" style="width:300px;heigh:200px">
 				</div>
 				<h3 class="mb-2 text-white">Welcome To Tailor Pro!</h3>
 				<p class="mb-4">Please sign-in to your account </p>
 			</div>
-			<div class="aside-image position-relative" style="background-image:url(images/background/pic-2.png);">
+			<div class="aside-image position-relative" style="background-image:url(images/background/pic-2.png);"  >
 				<img class="img1 move-1" src="{{url('images/background/pic3.png')}}" alt="">
 				<img class="img2 move-2" src="{{url('images/background/pic4.png')}}" alt="">
 				<img class="img3 move-3" src="{{url('images/background/pic5.png')}}" alt="">
 				
 			</div>
 		</div>
-		<div class="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
-			<div class="d-flex justify-content-center h-100 align-items-center">
+		<div class="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto"  >
+			<div class="d-flex justify-content-center h-100 align-items-center" >
 				<div class="authincation-content style-2">
 					<div class="row no-gutters">
 						<div class="col-xl-12 tab-content">

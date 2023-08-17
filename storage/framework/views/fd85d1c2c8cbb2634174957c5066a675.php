@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -53,13 +54,14 @@
 						<line x1="3" y1="6" x2="21" y2="6"></line>
 						<path d="M16 10a4 4 0 0 1-8 0"></path>
 					</svg>
-					<h4 class="my-2">Please Varify Your Email</h4>
+					<h4 class="my-2">Please Send Your Email</h4>
 					<br>
 					<form action="<?php echo e(url('verifyEmail')); ?>" method="post">
 						<?php echo csrf_field(); ?>
+					
 						<div class="mb-3">
 							
-						  <input type="email" class="form-control" name="email"   placeholder="Enter Your Email" required>
+						  <input type="email" class="form-control" name="email"   placeholder="Enter Your Email" value="<?php echo e($email); ?>" required>
 						</div>
 					
 					<br>

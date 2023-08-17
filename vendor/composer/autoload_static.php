@@ -10,11 +10,11 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
@@ -33,6 +33,7 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '0c3c22e27afa83be19b4c938f4c6e9ea' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
 
@@ -82,9 +83,14 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\TemporaryDirectory\\' => 26,
+            'Spatie\\SignalAwareCommand\\' => 26,
+            'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
+            'Spatie\\DbDumper\\' => 16,
+            'Spatie\\Backup\\' => 14,
             'Spatie\\Backtrace\\' => 17,
         ),
         'R' => 
@@ -129,6 +135,10 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
             'Illuminate\\Support\\' => 19,
             'Illuminate\\' => 11,
         ),
+        'H' => 
+        array (
+            'Hashids\\' => 8,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\UriTemplate\\' => 23,
@@ -167,6 +177,7 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         ),
         'A' => 
         array (
+            'App\\Http\\Controllers\\finance\\' => 29,
             'App\\' => 4,
         ),
     );
@@ -308,6 +319,18 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\TemporaryDirectory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/temporary-directory/src',
+        ),
+        'Spatie\\SignalAwareCommand\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src',
+        ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
+        ),
         'Spatie\\LaravelIgnition\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
@@ -319,6 +342,14 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         'Spatie\\FlareClient\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/flare-client-php/src',
+        ),
+        'Spatie\\DbDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/db-dumper/src',
+        ),
+        'Spatie\\Backup\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-backup/src',
         ),
         'Spatie\\Backtrace\\' => 
         array (
@@ -346,8 +377,8 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -423,6 +454,10 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Hashids\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hashids/hashids/src',
+        ),
         'GuzzleHttp\\UriTemplate\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/uri-template/src',
@@ -497,6 +532,10 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'App\\Http\\Controllers\\finance\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Http/Controllers/finance',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -515,10 +554,32 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\DatabaseBackUp' => __DIR__ . '/../..' . '/app/Console/Commands/DatabaseBackUp.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\BackupController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackupController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\billing\\InvoicingController' => __DIR__ . '/../..' . '/app/Http/Controllers/billing/InvoicingController.php',
+        'App\\Http\\Controllers\\billing\\Payment_ProcessingController' => __DIR__ . '/../..' . '/app/Http/Controllers/billing/Payment_ProcessingController.php',
+        'App\\Http\\Controllers\\client\\ClientController' => __DIR__ . '/../..' . '/app/Http/Controllers/client/ClientController.php',
+        'App\\Http\\Controllers\\client\\Order_HistoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/client/Order_HistoryController.php',
+        'App\\Http\\Controllers\\company\\BranchController' => __DIR__ . '/../..' . '/app/Http/Controllers/company/BranchController.php',
+        'App\\Http\\Controllers\\company\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/company/CompanyController.php',
+        'App\\Http\\Controllers\\finance\\ExpenseController' => __DIR__ . '/../..' . '/app/Http/Controllers/finance/ExpenseController.php',
+        'App\\Http\\Controllers\\finance\\ProfitController' => __DIR__ . '/../..' . '/app/Http/Controllers/finance/ProfitController.php',
+        'App\\Http\\Controllers\\finance\\RevenueController' => __DIR__ . '/../..' . '/app/Http/Controllers/finance/RevenueController.php',
+        'App\\Http\\Controllers\\hr\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/hr/EmployeeController.php',
+        'App\\Http\\Controllers\\order\\Order_DetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/order/Order_DetailController.php',
+        'App\\Http\\Controllers\\order\\Order_TrackingController' => __DIR__ . '/../..' . '/app/Http/Controllers/order/Order_TrackingController.php',
+        'App\\Http\\Controllers\\product\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/product/ProductController.php',
+        'App\\Http\\Controllers\\product\\Product_CategorieController' => __DIR__ . '/../..' . '/app/Http/Controllers/product/Product_CategorieController.php',
+        'App\\Http\\Controllers\\reports\\ExpenseReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/reports/ExpenseReportController.php',
+        'App\\Http\\Controllers\\reports\\Order_History_ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/reports/Order_History_ReportController.php',
+        'App\\Http\\Controllers\\reports\\ProfitReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/reports/ProfitReportController.php',
+        'App\\Http\\Controllers\\reports\\RevenueReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/reports/RevenueReportController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -528,6 +589,30 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\verifyEmail' => __DIR__ . '/../..' . '/app/Mail/verifyEmail.php',
+        'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
+        'App\\Models\\AdminVerify' => __DIR__ . '/../..' . '/app/Models/AdminVerify.php',
+        'App\\Models\\Branch' => __DIR__ . '/../..' . '/app/Models/Branch.php',
+        'App\\Models\\Client' => __DIR__ . '/../..' . '/app/Models/Client.php',
+        'App\\Models\\Company' => __DIR__ . '/../..' . '/app/Models/Company.php',
+        'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
+        'App\\Models\\Expense' => __DIR__ . '/../..' . '/app/Models/Expense.php',
+        'App\\Models\\ExpenseReport' => __DIR__ . '/../..' . '/app/Models/ExpenseReport.php',
+        'App\\Models\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Invoicing.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
+        'App\\Models\\OrderItem' => __DIR__ . '/../..' . '/app/Models/OrderItem.php',
+        'App\\Models\\Order_Detail' => __DIR__ . '/../..' . '/app/Models/Order_Detail.php',
+        'App\\Models\\Order_History' => __DIR__ . '/../..' . '/app/Models/Order_History.php',
+        'App\\Models\\Order_History_Report' => __DIR__ . '/../..' . '/app/Models/Order_History_Report.php',
+        'App\\Models\\Order_Tracking' => __DIR__ . '/../..' . '/app/Models/Order_Tracking.php',
+        'App\\Models\\Payment_Processing' => __DIR__ . '/../..' . '/app/Models/Payment_Processing.php',
+        'App\\Models\\Plan' => __DIR__ . '/../..' . '/app/Models/Plan.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\Product_Categorie' => __DIR__ . '/../..' . '/app/Models/Product_Categorie.php',
+        'App\\Models\\Profit' => __DIR__ . '/../..' . '/app/Models/Profit.php',
+        'App\\Models\\ProfitReport' => __DIR__ . '/../..' . '/app/Models/ProfitReport.php',
+        'App\\Models\\Revenue' => __DIR__ . '/../..' . '/app/Models/Revenue.php',
+        'App\\Models\\RevenueReport' => __DIR__ . '/../..' . '/app/Models/RevenueReport.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -1513,6 +1598,11 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Hashids\\Hashids' => __DIR__ . '/..' . '/hashids/hashids/src/Hashids.php',
+        'Hashids\\HashidsInterface' => __DIR__ . '/..' . '/hashids/hashids/src/HashidsInterface.php',
+        'Hashids\\Math\\BCMath' => __DIR__ . '/..' . '/hashids/hashids/src/Math/BCMath.php',
+        'Hashids\\Math\\Gmp' => __DIR__ . '/..' . '/hashids/hashids/src/Math/Gmp.php',
+        'Hashids\\Math\\MathInterface' => __DIR__ . '/..' . '/hashids/hashids/src/Math/MathInterface.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Events\\GateEvaluated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Events/GateEvaluated.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
@@ -5165,6 +5255,78 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         'Spatie\\Backtrace\\CodeSnippet' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippet.php',
         'Spatie\\Backtrace\\File' => __DIR__ . '/..' . '/spatie/backtrace/src/File.php',
         'Spatie\\Backtrace\\Frame' => __DIR__ . '/..' . '/spatie/backtrace/src/Frame.php',
+        'Spatie\\Backup\\BackupDestination\\Backup' => __DIR__ . '/..' . '/spatie/laravel-backup/src/BackupDestination/Backup.php',
+        'Spatie\\Backup\\BackupDestination\\BackupCollection' => __DIR__ . '/..' . '/spatie/laravel-backup/src/BackupDestination/BackupCollection.php',
+        'Spatie\\Backup\\BackupDestination\\BackupDestination' => __DIR__ . '/..' . '/spatie/laravel-backup/src/BackupDestination/BackupDestination.php',
+        'Spatie\\Backup\\BackupDestination\\BackupDestinationFactory' => __DIR__ . '/..' . '/spatie/laravel-backup/src/BackupDestination/BackupDestinationFactory.php',
+        'Spatie\\Backup\\BackupServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-backup/src/BackupServiceProvider.php',
+        'Spatie\\Backup\\Commands\\BackupCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Commands/BackupCommand.php',
+        'Spatie\\Backup\\Commands\\BaseCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Commands/BaseCommand.php',
+        'Spatie\\Backup\\Commands\\CleanupCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Commands/CleanupCommand.php',
+        'Spatie\\Backup\\Commands\\ListCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Commands/ListCommand.php',
+        'Spatie\\Backup\\Commands\\MonitorCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Commands/MonitorCommand.php',
+        'Spatie\\Backup\\Events\\BackupHasFailed' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/BackupHasFailed.php',
+        'Spatie\\Backup\\Events\\BackupManifestWasCreated' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/BackupManifestWasCreated.php',
+        'Spatie\\Backup\\Events\\BackupWasSuccessful' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/BackupWasSuccessful.php',
+        'Spatie\\Backup\\Events\\BackupZipWasCreated' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/BackupZipWasCreated.php',
+        'Spatie\\Backup\\Events\\CleanupHasFailed' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/CleanupHasFailed.php',
+        'Spatie\\Backup\\Events\\CleanupWasSuccessful' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/CleanupWasSuccessful.php',
+        'Spatie\\Backup\\Events\\DumpingDatabase' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/DumpingDatabase.php',
+        'Spatie\\Backup\\Events\\HealthyBackupWasFound' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/HealthyBackupWasFound.php',
+        'Spatie\\Backup\\Events\\UnhealthyBackupWasFound' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Events/UnhealthyBackupWasFound.php',
+        'Spatie\\Backup\\Exceptions\\CannotCreateDbDumper' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/CannotCreateDbDumper.php',
+        'Spatie\\Backup\\Exceptions\\InvalidBackupDestination' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/InvalidBackupDestination.php',
+        'Spatie\\Backup\\Exceptions\\InvalidBackupFile' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/InvalidBackupFile.php',
+        'Spatie\\Backup\\Exceptions\\InvalidBackupJob' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/InvalidBackupJob.php',
+        'Spatie\\Backup\\Exceptions\\InvalidCommand' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/InvalidCommand.php',
+        'Spatie\\Backup\\Exceptions\\InvalidHealthCheck' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/InvalidHealthCheck.php',
+        'Spatie\\Backup\\Exceptions\\NotificationCouldNotBeSent' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Exceptions/NotificationCouldNotBeSent.php',
+        'Spatie\\Backup\\Helpers\\ConsoleOutput' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/ConsoleOutput.php',
+        'Spatie\\Backup\\Helpers\\File' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/File.php',
+        'Spatie\\Backup\\Helpers\\Format' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/Format.php',
+        'Spatie\\Backup\\Helpers\\RightAlignedTableStyle' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/RightAlignedTableStyle.php',
+        'Spatie\\Backup\\Listeners\\EncryptBackupArchive' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Listeners/EncryptBackupArchive.php',
+        'Spatie\\Backup\\Notifications\\BaseNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/BaseNotification.php',
+        'Spatie\\Backup\\Notifications\\Channels\\Discord\\DiscordChannel' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Channels/Discord/DiscordChannel.php',
+        'Spatie\\Backup\\Notifications\\Channels\\Discord\\DiscordMessage' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Channels/Discord/DiscordMessage.php',
+        'Spatie\\Backup\\Notifications\\EventHandler' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/EventHandler.php',
+        'Spatie\\Backup\\Notifications\\Notifiable' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifiable.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\BackupHasFailedNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/BackupHasFailedNotification.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\BackupWasSuccessfulNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/BackupWasSuccessfulNotification.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\CleanupHasFailedNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/CleanupHasFailedNotification.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\CleanupWasSuccessfulNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/CleanupWasSuccessfulNotification.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\HealthyBackupWasFoundNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/HealthyBackupWasFoundNotification.php',
+        'Spatie\\Backup\\Notifications\\Notifications\\UnhealthyBackupWasFoundNotification' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Notifications/Notifications/UnhealthyBackupWasFoundNotification.php',
+        'Spatie\\Backup\\Tasks\\Backup\\BackupJob' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/BackupJob.php',
+        'Spatie\\Backup\\Tasks\\Backup\\BackupJobFactory' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/BackupJobFactory.php',
+        'Spatie\\Backup\\Tasks\\Backup\\DbDumperFactory' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/DbDumperFactory.php',
+        'Spatie\\Backup\\Tasks\\Backup\\FileSelection' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/FileSelection.php',
+        'Spatie\\Backup\\Tasks\\Backup\\Manifest' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/Manifest.php',
+        'Spatie\\Backup\\Tasks\\Backup\\Zip' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Backup/Zip.php',
+        'Spatie\\Backup\\Tasks\\Cleanup\\CleanupJob' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Cleanup/CleanupJob.php',
+        'Spatie\\Backup\\Tasks\\Cleanup\\CleanupStrategy' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Cleanup/CleanupStrategy.php',
+        'Spatie\\Backup\\Tasks\\Cleanup\\Period' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Cleanup/Period.php',
+        'Spatie\\Backup\\Tasks\\Cleanup\\Strategies\\DefaultStrategy' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Cleanup/Strategies/DefaultStrategy.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\BackupDestinationStatus' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/BackupDestinationStatus.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\BackupDestinationStatusFactory' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/BackupDestinationStatusFactory.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\HealthCheck' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/HealthCheck.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\HealthCheckFailure' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/HealthCheckFailure.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\HealthChecks\\IsReachable' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/HealthChecks/IsReachable.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\HealthChecks\\MaximumAgeInDays' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/HealthChecks/MaximumAgeInDays.php',
+        'Spatie\\Backup\\Tasks\\Monitor\\HealthChecks\\MaximumStorageInMegabytes' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Tasks/Monitor/HealthChecks/MaximumStorageInMegabytes.php',
+        'Spatie\\DbDumper\\Compressors\\Bzip2Compressor' => __DIR__ . '/..' . '/spatie/db-dumper/src/Compressors/Bzip2Compressor.php',
+        'Spatie\\DbDumper\\Compressors\\Compressor' => __DIR__ . '/..' . '/spatie/db-dumper/src/Compressors/Compressor.php',
+        'Spatie\\DbDumper\\Compressors\\GzipCompressor' => __DIR__ . '/..' . '/spatie/db-dumper/src/Compressors/GzipCompressor.php',
+        'Spatie\\DbDumper\\Databases\\MongoDb' => __DIR__ . '/..' . '/spatie/db-dumper/src/Databases/MongoDb.php',
+        'Spatie\\DbDumper\\Databases\\MySql' => __DIR__ . '/..' . '/spatie/db-dumper/src/Databases/MySql.php',
+        'Spatie\\DbDumper\\Databases\\PostgreSql' => __DIR__ . '/..' . '/spatie/db-dumper/src/Databases/PostgreSql.php',
+        'Spatie\\DbDumper\\Databases\\Sqlite' => __DIR__ . '/..' . '/spatie/db-dumper/src/Databases/Sqlite.php',
+        'Spatie\\DbDumper\\DbDumper' => __DIR__ . '/..' . '/spatie/db-dumper/src/DbDumper.php',
+        'Spatie\\DbDumper\\DsnParser' => __DIR__ . '/..' . '/spatie/db-dumper/src/DsnParser.php',
+        'Spatie\\DbDumper\\Exceptions\\CannotSetParameter' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/CannotSetParameter.php',
+        'Spatie\\DbDumper\\Exceptions\\CannotStartDump' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/CannotStartDump.php',
+        'Spatie\\DbDumper\\Exceptions\\DumpFailed' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/DumpFailed.php',
+        'Spatie\\DbDumper\\Exceptions\\InvalidDatabaseUrl' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/InvalidDatabaseUrl.php',
         'Spatie\\FlareClient\\Api' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Api.php',
         'Spatie\\FlareClient\\Concerns\\HasContext' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Concerns/HasContext.php',
         'Spatie\\FlareClient\\Concerns\\UsesTime' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Concerns/UsesTime.php',
@@ -5312,6 +5474,19 @@ class ComposerStaticInit69e0a64c3484019bfe3388987564c126
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\LaravelPackageTools\\Commands\\InstallCommand' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Commands/InstallCommand.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
+        'Spatie\\SignalAwareCommand\\Events\\SignalReceived' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/Events/SignalReceived.php',
+        'Spatie\\SignalAwareCommand\\Facades\\Signal' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/Facades/Signal.php',
+        'Spatie\\SignalAwareCommand\\Signal' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/Signal.php',
+        'Spatie\\SignalAwareCommand\\SignalAwareCommand' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/SignalAwareCommand.php',
+        'Spatie\\SignalAwareCommand\\SignalAwareCommandServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/SignalAwareCommandServiceProvider.php',
+        'Spatie\\SignalAwareCommand\\Signals' => __DIR__ . '/..' . '/spatie/laravel-signal-aware-command/src/Signals.php',
+        'Spatie\\TemporaryDirectory\\Exceptions\\InvalidDirectoryName' => __DIR__ . '/..' . '/spatie/temporary-directory/src/Exceptions/InvalidDirectoryName.php',
+        'Spatie\\TemporaryDirectory\\Exceptions\\PathAlreadyExists' => __DIR__ . '/..' . '/spatie/temporary-directory/src/Exceptions/PathAlreadyExists.php',
+        'Spatie\\TemporaryDirectory\\TemporaryDirectory' => __DIR__ . '/..' . '/spatie/temporary-directory/src/TemporaryDirectory.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

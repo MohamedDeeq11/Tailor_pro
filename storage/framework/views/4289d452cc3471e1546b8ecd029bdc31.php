@@ -1,149 +1,90 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- All Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="DexignLab" >
+	<meta name="robots" content="" >
+	<meta name="keywords" content="school, school admin, education, academy, admin dashboard, college, college management, education management, institute, school management, school management system, student management, teacher management, university, university management" >
+	<meta name="description" content="Discover Akademi - the ultimate admin dashboard and Bootstrap 5 template. Specially designed for professionals, and for business. Akademi provides advanced features and an easy-to-use interface for creating a top-quality website with School and Education Dashboard" >
+	<meta property="og:title" content="Akademi : School and Education Management Admin Dashboard Template" >
+	<meta property="og:description" content="Akademi - the ultimate admin dashboard and Bootstrap 5 template. Specially designed for professionals, and for business. Akademi provides advanced features and an easy-to-use interface for creating a top-quality website with School and Education Dashboard">
+	<meta property="og:image" content="https://akademi.dexignlab.com/xhtml/social-image.png" >
+	<meta name="format-detection" content="telephone=no">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Bootstrap 5.0 Pricing Table</title>
+	<!-- Page Title Here -->
+	<title>Login</title>
 
-  <style>
-    .card {
-      border:none;
-      padding: 10px 50px;
-    }
-
-    .card::after {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .card:hover {
-
-
-      transform: scale(1.02, 1.02);
-      -webkit-transform: scale(1.02, 1.02);
-      backface-visibility: hidden; 
-      will-change: transform;
-      box-shadow: 0 1rem 3rem rgba(0,0,0,.75) !important;
-    }
-
-    .card:hover::after {
-      opacity: 1;
-    }
-
-    .card:hover .btn-outline-primary{
-      color:white;
-      background:#007bff;
-    }
-
-  </style>
+<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
-<body  style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
 
+<body class="body  h-100">
+	<div class="authincation d-flex flex-column flex-lg-row flex-column-fluid">
+    <div class="container-fluid" style="margin-top: 40px">
+      <div class="container p-5">
+        <div class="row">
+          <div class="dropdown" style="margin-left: 88%" >
+            <a class="btn btn-outline-dark" href="<?php echo e(route('plans.cart')); ?>" >
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+              <span class="badge text-bg-danger"><?php echo e(count((array) session('cart'))); ?></span>
+             </a>
+        </div>
+        <div class="container mt-4">
+          <?php if(session('success')): ?>
+              <div class="alert alert-success">
+                <?php echo e(session('success')); ?>
 
-  <div class="container-fluid" style="margin-top: 40px">
-    <div class="container p-5">
-      <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Basic</h5>
-                <small>Individual</small>
-                <br><br>
-                <span class="h2">$8</span>/month
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Cras justo odio</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Dapibus ac facilisis in</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Vestibulum at eros</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-            </div>
-          </div>
+              </div> 
+          <?php endif; ?>
         </div>
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Standard</h5>
-                <small>Small Business</small>
-                <br><br>
-                <span class="h2">$20</span>/month 
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Cras justo odio</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Dapibus ac facilisis in</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Vestibulum at eros</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-            </div>
-          </div>
+        <br><br>
+        <?php $__currentLoopData = $plans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $plan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+  <div class="col-lg-4 col-md-12 mb-4">
+    <div class="card h-100 shadow-lg">
+      <div class="card-body">
+        <div class="text-center p-4">
+          <h5 class="card-title"><?php echo e($plan->name); ?></h5>
+          
+          <br><br>
+          <span class="h1" style="margin-left: 20px"><?php echo e($plan->price); ?></span>/month
+          <br><br>
         </div>
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Premium</h5>
-                <small>Large Companies</small>
-                <br><br>
-                <span class="h2">$40</span>/month
-                <br><br>
-              </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Cras justo odio</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Dapibus ac facilisis in</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Vestibulum at eros</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-            </div>
-          </div>
-        </div>
-      </div>    
+        <p class="text-center p-3">
+          <?php echo e($plan->description); ?>
+
+        </p>
+      </div>
+      
+      <div class="card-body text-center">
+        <p class="btn-holder"><a href="<?php echo e(route('addplan.to.cart', $plan->id)); ?>" class="btn btn-outline-danger">Buy</a> </p>
+      </div>
     </div>
-  </body>
+  </div>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+      </div>
+    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-3ou4y6o8rBzTQgQC4M3g9v4f6e3/qhM6lbA0O56GGnBbllScU+Sp/H70YL5By/1Q" crossorigin="anonymous"></script>
+  <?php echo $__env->yieldContent('scripts'); ?>
+	</div>
 
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    
 </body>
 </html><?php /**PATH C:\xampp\htdocs\Tailor-Pro\resources\views/auth/plans.blade.php ENDPATH**/ ?>

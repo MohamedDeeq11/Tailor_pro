@@ -1,16 +1,16 @@
 
-<div class="nav-header" >
+<div class="nav-header"  style="background-color: #cf9f17">
        
     <a href="<?php echo e(url('/dashboard')); ?>" class="brand-logo">
         
        
         <div class="brand-title" style="margin-top:20px">
-              <img src="<?php echo e(url('images/logo/AL-02.png')); ?>" alt="" style="width:180px;heigh:60px;text-align: center">
+              <img src="<?php echo e(url('/images/logo/AL-04.png')); ?>" alt="" style="width:180px;heigh:60px;text-align: center">
           
         </div> 
     </a>
     <div class="nav-control">
-        <div class="hamburger">
+        <div class="hamburger" >
             <span class="line"></span><span class="line"></span><span class="line"></span>
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="22" y="11" width="4" height="4" rx="2" fill="#2A353A"/>
@@ -27,14 +27,15 @@
     </div>
 </div>
 
-<div class="header">
+<div class="header"  >
     <div class="header-content">
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
-                <div class="dashboard_bar">
+                <div class="dashboard_bar"  >
                     <span></span>
-                    Dashboard
+                <?php echo e($pageTitle); ?>
+
                 </div>
                 </div>
                 <ul class="navbar-nav header-right">
@@ -94,7 +95,7 @@
                                     <div class="dlab-scroll px-3 mt-3 height300">
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -102,14 +103,14 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Oliver</a>
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Lucas</a>
                                                 
                                             </li>
@@ -117,7 +118,7 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -125,7 +126,7 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/4.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/4.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -133,7 +134,7 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/3.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/3.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -141,7 +142,7 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/2.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -149,7 +150,7 @@
                                         </ul>
                                         <ul class="d-flex align-items-center mb-3">
                                             <li>
-                                                <img src="<?php echo e(url('images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
+                                                <img src="<?php echo e(url('/images/avatar/1.jpg')); ?>" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
                                                 
                                             </li>
@@ -185,7 +186,7 @@
                                     <li>
                                         <div class="timeline-panel">
                                             <div class="media me-2">
-                                                <img alt="image" width="50" src="<?php echo e(url('images/avatar/1.jpg')); ?>">
+                                                <img alt="image" width="50" src="<?php echo e(url('/images/avatar/1.jpg')); ?>">
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -218,7 +219,8 @@
                                      <li>
                                         <div class="timeline-panel">
                                             <div class="media me-2">
-                                                <img alt="image" width="50" src="<?php echo e(url('images/avatar/1.jpg')); ?>">
+                                                <img alt="image" width="50" src="<?php echo e(url('/
+                                                images/avatar/1.jpg')); ?>">
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -262,7 +264,7 @@
                                     <div class="d-flex align-items-center sidebar-info">
                                         
                                     </div>
-                                    <img src="<?php echo e(url('images/user.jpg')); ?>" alt="">
+                                    <img src="<?php echo e(url('/images/user.jpg')); ?>" alt="">
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end pb-0" style="">
@@ -270,7 +272,7 @@
                                     <div class="card-header p-3">
                                         <ul class="d-flex align-items-center">
                                             <li>
-                                                <img src="<?php echo e(url('images/user.jpg')); ?>" class="ms-0" alt="">
+                                                <img src="<?php echo e(url('/images/user.jpg')); ?>" class="ms-0" alt="">
                                             </li>
                                             <li class="ms-2">
                                                 <h4 class="mb-0">Nella Vita</h4>
@@ -337,4 +339,5 @@
         </nav>
     </div>
     
-</div><?php /**PATH C:\xampp\htdocs\Tailor-Pro\resources\views/layouts/header.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH C:\xampp\htdocs\Tailor-Pro\resources\views/layouts/header.blade.php ENDPATH**/ ?>

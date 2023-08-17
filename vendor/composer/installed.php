@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'v10.2.2',
-        'version' => '10.2.2.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '230c6b2dd47359af6c8642047a4aec4ca330db81',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -156,6 +156,15 @@
             'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'hashids/hashids' => array(
+            'pretty_version' => '5.0.2',
+            'version' => '5.0.2.0',
+            'reference' => '197171016b77ddf14e259e186559152eb3f8cf33',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hashids/hashids',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -371,9 +380,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v10.2.2',
-            'version' => '10.2.2.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '230c6b2dd47359af6c8642047a4aec4ca330db81',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -724,8 +733,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -929,6 +938,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/db-dumper' => array(
+            'pretty_version' => '3.4.0',
+            'version' => '3.4.0.0',
+            'reference' => 'bbd5ae0f331d47e6534eb307e256c11a65c8e24a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/db-dumper',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/flare-client-php' => array(
             'pretty_version' => '1.3.6',
             'version' => '1.3.6.0',
@@ -947,6 +965,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/laravel-backup' => array(
+            'pretty_version' => '8.1.11',
+            'version' => '8.1.11.0',
+            'reference' => 'e4f5c3f6783d40a219a02bc99dc4171ecdd6d20c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-backup',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/laravel-ignition' => array(
             'pretty_version' => '2.1.3',
             'version' => '2.1.3.0',
@@ -955,6 +982,33 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'spatie/laravel-package-tools' => array(
+            'pretty_version' => '1.15.0',
+            'version' => '1.15.0.0',
+            'reference' => 'efab1844b8826443135201c4443690f032c3d533',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-package-tools',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-signal-aware-command' => array(
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => '46cda09a85aef3fd47fb73ddc7081f963e255571',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-signal-aware-command',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/temporary-directory' => array(
+            'pretty_version' => '2.1.2',
+            'version' => '2.1.2.0',
+            'reference' => '0c804873f6b4042aa8836839dca683c7d0f71831',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/temporary-directory',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.3.0',

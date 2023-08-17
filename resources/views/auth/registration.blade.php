@@ -18,7 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page Title Here -->
-	<title>Akademi : School and Education Management Admin Dashboard Template</title>
+	<title>Tialor Pro</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
@@ -30,10 +30,10 @@
 
 <body class="body  h-100">
 	<div class="authincation d-flex flex-column flex-lg-row flex-column-fluid">
-		<div class="login-aside text-center  d-flex flex-column flex-row-auto">
-			<div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+		<div class="login-aside text-center  d-flex flex-column flex-row-auto"  >
+			<div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15" >
 				<div class="text-center mb-lg-4 mb-2 pt-5 logo">
-                    <img src="{{url('images/logo/AL-02.png')}}" alt="" style="width:300px;heigh:200px">
+                    <img src="{{url('images/logo/AL-04.png')}}" alt="" style="width:300px;heigh:200px">
 				</div>
 				<h3 class="mb-2 text-white">Register Here!</h3>
 				
@@ -136,9 +136,14 @@
 										<div >
 											<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password"  placeholder="Confirm Password" required>
 										</div>
+
+
 									</div>
-							
-								
+									<br>
+									<div class="form-check custom-checkbox mb-3">
+										<input type="checkbox" class="form-check-input" id="customCheckBox1" required="">
+										<p class="form-check-label" for="customCheckBox1" style="font-size: 12px">you have agree the <a href="#" target="_blank" style="color: #cf9f17">terms & conditions</a> of TailorPro</p>
+									</div>
 								
 									<button type="submit" class="btn btn-block btn-primary" style="margin-top: 20px">Sign me up</button>
 									

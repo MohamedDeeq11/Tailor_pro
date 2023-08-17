@@ -16,23 +16,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page Title Here -->
-	<title>Akademi : School and Education Management Admin Dashboard Template</title>
+	<title>Tailor-pro</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
-	<link href="vendor/wow-master/css/libs/animate.css" rel="stylesheet">
-	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="vendor/bootstrap-select-country/css/bootstrap-select-country.min.css">
-	<link rel="stylesheet" href="vendor/jquery-nice-select/css/nice-select.css">
-	<link href="vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<link href="{{url('vendor/wow-master/css/libs/animate.css')}}" rel="stylesheet">
+	<link href="{{url('vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
+	<link rel="{{url('stylesheet" href="vendor/bootstrap-select-country/css/bootstrap-select-country.min.css')}}">
+	<link rel="{{url('stylesheet" href="vendor/jquery-nice-select/css/nice-select.css')}}">
+	<link href="{{url('vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet')}}">
 	
-	 <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	 <link href="{{url('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 	<!--swiper-slider-->
-	<link rel="stylesheet" href="./vendor/swiper/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="{{url('vendor/swiper/css/swiper-bundle.min.css')}}">
 	<!-- Style css -->
 	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-	
+    <link href="{{url('css/style.css')}}" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -84,6 +84,7 @@
             Content body start
         ***********************************-->
 		@yield('content');
+	
 		
         <!--**********************************
             Content body end
@@ -101,8 +102,8 @@
     ***********************************-->
 
 <!--***********************************-->
-	
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 		
 	<!--**********************************
 		Modal

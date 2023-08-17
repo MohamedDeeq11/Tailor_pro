@@ -1,14 +1,4 @@
-@component('mail::message')
-# Verify Your Email
-
-Hello {{ $admin->name }},
-
-Please click the button below to verify your email address:
-
-@component('mail::button', ['url' => $verificationUrl])
-Verify Email
-@endcomponent
-
-Thanks,<br>
-{{ config('app.name') }}
-@endcomponent
+<h1>Email Verification Mail</h1>
+  
+Please verify your email with bellow link: 
+<a href="{{ route('admin.verify', $_token) }}">Verify Email</a>

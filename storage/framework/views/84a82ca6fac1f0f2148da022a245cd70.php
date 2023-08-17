@@ -1,14 +1,14 @@
 ;
 <?php $__env->startSection('content'); ?>;
-<div class="content-body">
+<div class="content-body"  >
     <!-- row -->
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <!-- Row -->
-    	<div class="row" >
+    	<div class="row"  >
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body pb-xl-4 pb-sm-3 pb-0">	
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-xl-3 col-6">
                                 <div class="content-box">
                                     <div class="icon-box icon-box-xl std-data">
@@ -28,7 +28,7 @@
                                     <div class="chart-num">
                                         <p>Expenses</p>
             
-                                        <h2 class="font-w700 mb-0">754</h2>
+                                        <h2 class="font-w700 mb-0"><?php echo e($expensesCount); ?></h2>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="chart-num">
                                         <p>Revenue</p>
-                                        <h2 class="font-w700 mb-0">40</h2>
+                                        <h2 class="font-w700 mb-0"><?php echo e($revenuesCount); ?></h2>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="chart-num">
                                         <p >Pending Orders</p>
-                                        <h2 class="font-w700 mb-0">32k</h2>
+                                        <h2 class="font-w700 mb-0"><?php echo e($OrderCount); ?></h2>
                                     </div>
                                 </div>
                             </div>

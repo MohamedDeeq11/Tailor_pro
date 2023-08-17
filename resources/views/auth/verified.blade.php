@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -18,7 +19,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page Title Here -->
-	<title>Login</title>
+	<title>Tialor Pro</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
@@ -53,13 +54,14 @@
 						<line x1="3" y1="6" x2="21" y2="6"></line>
 						<path d="M16 10a4 4 0 0 1-8 0"></path>
 					</svg>
-					<h4 class="my-2">Please Varify Your Email</h4>
+					<h4 class="my-2">Please Send Your Email</h4>
 					<br>
 					<form action="{{url('verifyEmail')}}" method="post">
 						@csrf
+					
 						<div class="mb-3">
 							{{-- <label for="exampleFormControlInput1" class="form-label mb-2 fs-13 label-color font-w500">Email address</label> --}}
-						  <input type="email" class="form-control" name="email"   placeholder="Enter Your Email" required>
+						  <input type="email" class="form-control" name="email"   placeholder="Enter Your Email" value="{{$email}}" required>
 						</div>
 					
 					<br>

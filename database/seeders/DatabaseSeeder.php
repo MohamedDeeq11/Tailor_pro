@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\plan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $plans = 
+        [
+                    [
+                            'name' => 'Basic',
+                            'price' => 9,
+                            'description' => 'This is Plan 1 description.'
+                    ],
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+                    [
+                            'name' => 'standard',
+                            'price' => 19,
+                            'description' => 'This is Plan 2 description.'
+                    ],
+
+                    [
+                            'name' => 'premium',
+                            'price' => 29,
+                            'description' => 'This is Plan 3 description.'
+                    ],
+                ];
+          foreach ($plans as $key => $value) {
+            Plan::create($value);
+        }
     }
 }

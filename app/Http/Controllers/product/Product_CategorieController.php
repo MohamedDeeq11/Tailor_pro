@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class Product_CategorieController extends Controller
 {
     /**
@@ -18,7 +20,10 @@ class Product_CategorieController extends Controller
     {
         $pageTitle = 'Product Categories';
         $product_categories=Product_Categorie::latest()->paginate(5);
-        return view('product.product_categories.index',compact('product_categories','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product_categories.index',compact('product_categories','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,7 +33,10 @@ class Product_CategorieController extends Controller
     public function create(): View
     {
         $pageTitle = 'Product Categories';
-        return view('product.product_categories.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product_categories.create',compact('pageTitle','profile'));
     }
     /**
      * Store a newly created resource in storage.
@@ -55,7 +63,10 @@ class Product_CategorieController extends Controller
     
             $product_category = Product_Categorie::find($id);
         $pageTitle = 'Product Categories';
-        return view('product.product_categories.show',compact('product_category','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product_categories.show',compact('product_category','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -71,7 +82,10 @@ class Product_CategorieController extends Controller
     
             $product_category = Product_Categorie::find($id);
         $pageTitle = 'Product Categories';
-        return view('product.product_categories.edit', compact('product_category','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product_categories.edit', compact('product_category','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

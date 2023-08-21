@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->unsignedBigInteger('company_id')->default(0);
+            $table->unsignedBigInteger('branch_id')->default(0);
             $table->string('userpic')->nullable();
             $table->string('fname');
             $table->string('lname');
@@ -27,13 +28,15 @@ return new class extends Migration
             $table->string('pincode')->nullable();
             $table->string('password')->nullable();
             $table->string('status')->default('unverified');
-            $table->string('session-status')->nullable();
-            $table->date('registrated date')->nullable();
-            $table->string('lastTime-logged-In')->nullable();
+            $table->string('session_status')->nullable();
+            $table->date('registered_date')->nullable(); // Changed column name
+            $table->string('last_time_logged_in')->nullable(); // Changed column name
             $table->boolean('is_email_verified')->default(0);
             $table->rememberToken();
             $table->timestamps();
 
+            // Define the foreign key relationship to the companies table
+          
          
         });
     }

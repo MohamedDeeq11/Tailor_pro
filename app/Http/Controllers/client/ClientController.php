@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class ClientController extends Controller
 {
     /**
@@ -19,7 +21,10 @@ class ClientController extends Controller
     {
         $pageTitle = 'Client Details';
         $clients=Client::latest()->paginate(5);
-        return view('client.client.index',compact('clients','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('client.client.index',compact('clients','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,8 +33,11 @@ class ClientController extends Controller
      */
     public function create(): View
     {
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
         $pageTitle = 'Client Details';
-        return view('client.client.create',compact('pageTitle'));
+        return view('client.client.create',compact('pageTitle','profile'));
     }
     /**
      * Store a newly created resource in storage.
@@ -71,7 +79,10 @@ class ClientController extends Controller
     
             $client = Client::find($id);
         $pageTitle = 'Client Details';
-        return view('client.client.show',compact('client','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('client.client.show',compact('client','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -87,7 +98,10 @@ class ClientController extends Controller
     
             $client = Client::find($id);
         $pageTitle = 'Client Details';
-        return view('client.client.edit',compact('client','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('client.client.edit',compact('client','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class Order_TrackingController extends Controller
 {
     /**
@@ -18,7 +20,10 @@ class Order_TrackingController extends Controller
     {
         $pageTitle = 'Order Tracking';
         $order_trackings=Order_Tracking::latest()->paginate(5);
-        return view('order.order_tracking.index',compact('order_trackings','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order_tracking.index',compact('order_trackings','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,7 +33,10 @@ class Order_TrackingController extends Controller
     public function create(): View
     {
         $pageTitle = 'Order Tracking';
-        return view('order.order_tracking.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order_tracking.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -57,7 +65,10 @@ class Order_TrackingController extends Controller
     
             $order_tracking = Order_Tracking::find($id);
         $pageTitle = 'Order Tracking';
-        return view('order.order_tracking.show',compact('order_tracking','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order_tracking.show',compact('order_tracking','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -73,7 +84,10 @@ class Order_TrackingController extends Controller
     
             $order_tracking = Order_Tracking::find($id);
         $pageTitle = 'Order Tracking';
-        return view('order.order_tracking.edit',compact('order_tracking','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order_tracking.edit',compact('order_tracking','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

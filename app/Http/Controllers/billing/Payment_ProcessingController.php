@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class Payment_ProcessingController extends Controller
 {
     /**
@@ -16,9 +18,12 @@ class Payment_ProcessingController extends Controller
      */
     public function index():View
     {
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
         $pageTitle = 'Payment processing';
         $payment_processings=Payment_Processing::latest()->paginate(5);
-        return view('billing.Payment_Processing.index',compact('payment_processings','pageTitle'))
+        return view('billing.Payment_Processing.index',compact('payment_processings','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,8 +32,11 @@ class Payment_ProcessingController extends Controller
      */
     public function create(): View
     {
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
         $pageTitle = 'Payment processing';
-        return view('billing.Payment_Processing.create',compact('pageTitle'));
+        return view('billing.Payment_Processing.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -58,7 +66,10 @@ class Payment_ProcessingController extends Controller
     
              $payment_processing = Payment_Processing::find($id);
         $pageTitle = 'Payment processing';
-        return view('billing.Payment_Processing.show',compact('payment_processing','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('billing.Payment_Processing.show',compact('payment_processing','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -74,7 +85,10 @@ class Payment_ProcessingController extends Controller
     
              $payment_processing = Payment_Processing::find($id);
             $pageTitle = 'Payment processing';
-            return view('billing.Payment_Processing.edit',compact('payment_processing','pageTitle'));
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
+            return view('billing.Payment_Processing.edit',compact('payment_processing','pageTitle','profile'));
             } catch (DecryptException $e) {
                 return redirect()->back()->with('error', 'Invalid encrypted ID.');
             }

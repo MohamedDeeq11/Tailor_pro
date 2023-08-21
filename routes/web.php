@@ -28,6 +28,9 @@ use App\Http\Controllers\reports\Order_History_ReportController;
 use App\Http\Controllers\my_account\ProfileController;
 use App\Http\Controllers\my_account\SecurityController;
 use App\Http\Controllers\my_account\Payment_MethodController;
+use App\Http\Controllers\private_account\Private_ProfileController;
+use App\Http\Controllers\private_account\Private_SecurityController;
+use App\Http\Controllers\private_account\Private_Payment_MethodController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,10 +60,28 @@ use App\Http\Controllers\my_account\Payment_MethodController;
 
 //     return back()->with('message', 'Verification link sent!');
 // })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/private_payment_method', [Private_Payment_MethodController::class, 'index']);
+Route::get('/private_security', [Private_SecurityController::class, 'index']);
+Route::post('/security/submit', [Private_SecurityController::class, 'submitSecurityForm'])->name('security.submit');
+Route::get('/private_my_profile', [Private_ProfileController::class, 'index']);
+Route::post('/profile/store', [Private_ProfileController::class, 'store'])->name('profile.store');
+Route::get('/private_edit_profile', [Private_ProfileController::class, 'edit']);
+Route::post('security/password', [Private_ProfileController::class, 'submitPasswordForm'])
+    ->name('security.password.submit');
+Route::post('security/questions', [Private_ProfileController::class, 'submitSecurityForm'])
+    ->name('security.questions.submit');
 // Route::post('/backup/create', 'BackupController')->name('backup.create');
+
 Route::get('/payment_method', [Payment_MethodController::class, 'index']);
 Route::get('/security', [SecurityController::class, 'index']);
-Route::post('/security/submit', [SecurityController::class, 'submitSecurityForm'])->name('security.submit');
+Route::post('security/password', [SecurityController::class, 'submitPasswordForm'])
+    ->name('security.password.submit');
+
+// Route for the security questions form
+Route::post('security/questions', [SecurityController::class, 'submitSecurityForm'])
+    ->name('security.questions.submit');
+// Route::post('/security/submit', [SecurityController::class, 'submitSecurityForm'])->name('security.submit');
 Route::get('/my_profile', [ProfileController::class, 'index']);
 Route::post('/profile/store', [ProfileController::class, 'store'])->name('profile.store');
 Route::get('/edit_profile', [ProfileController::class, 'edit']);

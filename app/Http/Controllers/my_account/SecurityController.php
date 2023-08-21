@@ -25,18 +25,52 @@ class SecurityController extends Controller
         'What are the last 5 digits of your driver\'s license number?',
     ];
         $pageTitle = 'Security';
-        return view('my_account.security',compact('pageTitle','securityQuestions'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        $currentDate = now();
+        return view('my_account.security',compact('pageTitle','securityQuestions','profile','currentDate'));
     }
+    public function submitPasswordForm(Request $request)
+    {
+        // Check if the admin user is authenticated
+        if (Auth::guard('admin')->check()) {
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+
+            // Validate the form inputs
+            $request->validate([
+                'current_password' => 'required',
+                'new_password' => 'required|string|min:8|confirmed',
+            ]);
+
+            // Verify the current password
+            if (!Hash::check($request->input('current_password'), $admin->password)) {
+                return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
+            }
+
+            // Hash the new password
+            $newPasswordHash = Hash::make($request->input('new_password'));
+
+            // Update the admin's password in the database
+            $admin->password = $newPasswordHash;
+            $admin->save();
+
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Password changed successfully.');
+        } else {
+            // Handle the case where the admin is not authenticated
+            return redirect()->back()->withErrors(['authentication' => 'You are not authenticated as an admin.']);
+        }
+    }
+
     public function submitSecurityForm(Request $request)
     {
         // Check if the admin user is authenticated
         if (Auth::guard('admin')->check()) {
             $admin = Auth::guard('admin')->user(); // Get the authenticated admin
-    
-            // Validate the form inputs
+
+            // Validate the form inputs for security questions
             $request->validate([
-                'current_password' => 'required',
-                'new_password' => 'required|string|min:8|confirmed',
                 'question1' => 'required',
                 'answer1' => 'required',
                 'question2' => 'required',
@@ -45,19 +79,7 @@ class SecurityController extends Controller
                 'answer3' => 'required',
                 'date' => 'required|date',
             ]);
-    
-            // Verify the current password
-            if (!Hash::check($request->input('current_password'), $admin->password)) {
-                return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
-            }
-    
-            // Hash the new password
-            $newPasswordHash = Hash::make($request->input('new_password'));
-    
-            // Update the admin's password in the database
-            $admin->password = $newPasswordHash;
-            $admin->save();
-    
+
             // Find or create a security record for the admin
             $security = SecurityQuestion::updateOrCreate(
                 ['admin_id' => $admin->id],
@@ -71,7 +93,7 @@ class SecurityController extends Controller
                     'date' => $request->input('date'),
                 ]
             );
-    
+
             // Redirect with success message
             return redirect()->back()->with('success', 'Security information updated successfully.');
         } else {
@@ -80,21 +102,7 @@ class SecurityController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
 
 }

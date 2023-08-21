@@ -1,11 +1,12 @@
 @extends('privatelayout.privateadmin');
 @section('private');
+
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
         <!-- Row -->
     	<div class="row" >
-            <div class="col-xl-6" style="margin-left: 2%">
+            <div class="col-xl-6" >
                 <div class="card">
                     <div class="card-body pb-xl-2 pb-sm-3 pb-0">	
                         <div class="row">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5">
+            <div class="col-xl-6">
                 <div class="card">
                     <div class="card-body pb-xl-5 pb-sm-3 pb-0">	
                         <div class="row">
@@ -79,8 +80,8 @@
             <!--/column-->
         </div> 
         <!-- column-->
-        <div class="row" style="width: 98%">
-        <div class="col-xl-13" style="margin-left: 2%;margin-right: 20rem">
+        <div class="row" >
+        <div class="col-xl-12" >
             <div class="card">
                 <div class="card-header border-0 p-3">
                     <h4 class="heading mb-0">My Task</h4>

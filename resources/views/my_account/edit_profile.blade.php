@@ -12,6 +12,24 @@
                                 <div class="author-profile">
                                     <div class="author-media">
                                         <div class="user-media">
+                                            <script>
+                                                // Set the toastr options globally
+                                                toastr.options = {
+                                                    "timeOut": 4000,
+                                                    "progressBar" : true,
+                                                    "closeButton" : true,
+                                                };
+                                            
+                                                // Check if 'success' message is present in the session and show toastr
+                                                @if(Session::has('success'))
+                                                    toastr.success('{{ Session::get('success') }}', 'Success!');
+                                                @endif
+                                            
+                                                // Display an error toastr message if security questions are not answered
+                                                @if($errors->has('security_questions'))
+                                                    toastr.error('{{ $errors->first('security_questions') }}', 'Error');
+                                                @endif
+                                            </script>
                                             @if ($profile->userpic)
                                                 <!-- Display uploaded image if available -->
                                                 <img src="/images/{{ $profile->userpic }}" class="avatar avatar-xxl" alt="">
@@ -62,6 +80,10 @@
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Last Name</label>
                                     <input type="text" class="form-control" name="lname" value="{{$profile->lname}}">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Country</label>
+                                    <input type="text" class="form-control" name="country" value="{{$profile->country}}">
                                 </div>
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Address</label>

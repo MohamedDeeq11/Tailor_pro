@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use App\Models\Company;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Encryption\DecryptException;
 class BranchController extends Controller
 {
@@ -16,14 +18,20 @@ class BranchController extends Controller
     {
         $pageTitle = 'Branches';
         $branchs = Branch::latest()->paginate(5);
-        return view('company.branch.index', compact('branchs', 'pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.branch.index', compact('branchs', 'pageTitle','profile'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create(Company $company): View
     {
         $pageTitle = 'Branches';
-        return view('company.branch.create', compact('pageTitle', 'company'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.branch.create', compact('pageTitle', 'company','profile'));
     }
 
    public function store(Request $request, Company $company)
@@ -49,7 +57,10 @@ class BranchController extends Controller
     
             $branch = Branch::find($id);
         $pageTitle = 'Branches';
-        return view('company.branch.show', compact('branch', 'pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.branch.show', compact('branch', 'pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -63,7 +74,10 @@ class BranchController extends Controller
             $branch = Branch::find($id);
         $pageTitle = 'Branches';
         $company = $branch->company;
-        return view('company.branch.edit', compact('pageTitle', 'branch', 'company'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.branch.edit', compact('pageTitle', 'branch', 'company','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

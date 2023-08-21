@@ -63,13 +63,19 @@ class AuthController extends Controller
             $expensesCount = Expense::count();
             $revenuesCount = Revenue::count();
             $OrderCount = Order_Detail::count();
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
             $pageTitle = 'Dashboard';
-          return view('admin.dashboard' ,compact('expensesCount', 'revenuesCount','OrderCount','pageTitle'));
+          return view('admin.dashboard' ,compact('expensesCount', 'revenuesCount','OrderCount','pageTitle','profile'));
         }
         public function private()
         { 
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
             $pageTitle = 'Private';
-            return view('private.private', compact('pageTitle'));
+            return view('private.private', compact('pageTitle','profile'));
         }
 
    
@@ -162,8 +168,12 @@ class AuthController extends Controller
 
     public function planspage()
     {
+        $pageTitle = 'Plans';
         $plans=Plan::all();
-        return view('auth.plans',compact('plans'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('auth.plans',compact('plans','pageTitle','profile'));
     }
    
     public function addPlantoCart($id)

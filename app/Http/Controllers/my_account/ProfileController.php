@@ -16,12 +16,12 @@ class ProfileController extends Controller
     public function index()
     {
         $admin = Auth::guard('admin')->user(); // Get the authenticated admin
-       
-            $profile = Admin::find($admin->id);
-            $companys = Company::find($admin->id);
     
+        $profile = Admin::with('company')->find($admin->id);
+    
+
         $pageTitle = 'My Profile';
-        return view('my_account.profile', compact('pageTitle', 'profile','companys'));
+        return view('my_account.profile', compact('pageTitle', 'profile'));
     }
 
     /**
@@ -42,6 +42,7 @@ class ProfileController extends Controller
            $data->email=$request->email;
            $data->mobile=$request->mobile;
            $data->address=$request->address;
+           $data->country=$request->country;
            $data->userpic=$request->userpic;
         //    $data->email=$request->email;
 
@@ -57,7 +58,7 @@ class ProfileController extends Controller
 
         $data->save();
 
-        return redirect()->back();
+        return redirect('my_profile')->with('success', 'Update Profile successfully.');
      
     }
 

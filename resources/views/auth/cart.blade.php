@@ -67,7 +67,7 @@
 										<th style="width:50%">Description</th>
 										<th style="width:10%">Price</th>
 										<th style="width:8%">Quantity</th>
-										<th style="width:22%" class="text-center">Subtotal</th>
+										
 										<th style="width:10%">Action</th>
 									</tr>
 								</thead>
@@ -90,9 +90,9 @@
 										<td data-th="Quantity">
 											<input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
 										</td>
-										<td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+										
 										<td class="actions" data-th="">
-											<button class="btn btn-danger btn-sm cart_remove"><i class="fa fa-trash-o"></i> Delete</button>
+											<button class="btn btn-danger btn-sm cart_remove"><i class="fa fa-trash"></i></button>
 										</td>
 									</tr>
 									@endforeach
@@ -107,9 +107,9 @@
 									<tr>
 										<td colspan="5" style="text-align:right;">
 											<form action="/session" method="POST">
-												<a href="{{ url('/plans') }}" class="btn btn-danger" style="margin-right: 10px">
+												{{-- <a href="{{ url('/plans') }}" class="btn btn-danger" style="margin-right: 10px">
 													<i class="fa fa-arrow-left"></i> Continue Shopping
-												</a>
+												</a> --}}
 												<input type="hidden" name="_token" value="{{ csrf_token() }}">
 												<a href="{{ url('/Checkout') }}" class="btn btn-success">
 													Proceed To Checkout <i class="fa fa-arrow-right"></i>

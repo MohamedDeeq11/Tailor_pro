@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class Order_DetailController extends Controller
 {
     /**
@@ -19,7 +21,10 @@ class Order_DetailController extends Controller
     {
         $pageTitle = 'Order details';
         $order_details=Order_Detail::latest()->paginate(5);
-        return view('order.order.index',compact('order_details','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order.index',compact('order_details','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -29,7 +34,10 @@ class Order_DetailController extends Controller
     public function create(): View
     {
         $pageTitle = 'Order details';
-        return view('order.order.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order.create',compact('pageTitle','profile'));
     }
 
 
@@ -63,7 +71,10 @@ class Order_DetailController extends Controller
     
             $order_detail = Order_Detail::find($id);
         $pageTitle = 'Order details';
-        return view('order.order.show',compact('order_detail','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order.show',compact('order_detail','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -80,7 +91,10 @@ class Order_DetailController extends Controller
     
             $order_detail = Order_Detail::find($id);
         $pageTitle = 'Order details';
-        return view('order.order.edit',compact('order_detail','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('order.order.edit',compact('order_detail','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

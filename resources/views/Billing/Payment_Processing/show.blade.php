@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Show  Payment Processing</h5>
-                        <a  href="{{ url('/payment_processings') }}" class="btn btn-primary" style="margin-right: 10px;">
+                        <a  href="{{ url('/payment_processings') }}" class="btn btn-primary" >
                             <i class="fa fa-close"></i> 
                         </a>
                     </div>

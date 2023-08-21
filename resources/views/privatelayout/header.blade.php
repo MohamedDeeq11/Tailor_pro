@@ -1,31 +1,3 @@
-{{-- style="width: 250px" --}}
-<div class="nav-header">
-    <a href="index.html" class="brand-logo">
-      	<img src="{{url('images/logo-w.png')}}" alt="" style="width:40px;heigh:40">
-        <div class="brand-title">
-            <img src="{{url('images/AL-06.png')}}" alt="" style="width:140px;heigh:30">
-        </div> 
-    </a>
-    
-
-    <div class="nav-control">
-        <div class="hamburger">
-            <span class="line"></span><span class="line"></span><span class="line"></span>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="22" y="11" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect x="11" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect x="22" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect x="11" y="11" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect x="11" y="22" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect y="11" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect x="22" y="22" width="4" height="4" rx="2" fill="#2A353A"/>
-                <rect y="22" width="4" height="4" rx="2" fill="#2A353A"/>
-            </svg>		
-        </div>
-    </div>
-</div>
-
 <div class="header">
     <div class="header-content">
         <nav class="navbar navbar-expand">
@@ -173,92 +145,28 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A098AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>						
                         </a>
                     </li>		 --}}
-                    <li class="nav-item bell-icon blink dropdown notification_dropdown">
-                        <a class="nav-link  " href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                    <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25.3677 18.9391V9.86768C25.3677 4.70215 21.1655 0.5 16 0.5C10.8345 0.5 6.63232 4.70215 6.63232 9.86768V18.9397C4.96704 19.4224 3.73828 20.9544 3.73828 22.8374C3.73828 25.0386 5.5293 26.8296 7.73096 26.8296H11.377V26.877C11.377 29.4263 13.4507 31.5 16 31.5C18.5493 31.5 20.6231 29.4263 20.6231 26.8769V26.8296H24.2691C26.4707 26.8296 28.2617 25.0386 28.2617 22.7583C28.2617 20.9406 27.033 19.4198 25.3677 18.9391ZM9.63232 9.86768C9.63232 6.35645 12.4888 3.5 16 3.5C19.5112 3.5 22.3677 6.35645 22.3677 9.86768V18.7661H9.63232V9.86768ZM17.6231 26.8769C17.6231 27.772 16.895 28.5 16 28.5C15.105 28.5 14.377 27.772 14.377 26.8769V26.8296H17.623V26.8769H17.6231ZM24.269 23.8296H7.73096C7.1836 23.8296 6.73828 23.3843 6.73828 22.7583C6.73828 22.2114 7.18359 21.7661 7.73096 21.7661H24.2691C24.8164 21.7661 25.2617 22.2114 25.2617 22.8374C25.2617 23.3843 24.8164 23.8296 24.269 23.8296Z" fill="#A098AE"/>
-                        </svg>		
+                    <li class="nav-item  blink dropdown notification_dropdown">
+                        <a class="nav-link  " href="{{ route('plans.cart') }}" role="button" >
+                         
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+                                <span class="badge text-bg-danger">{{ count((array) session('cart')) }}</span>
+                           
                         </a>
                         <div class="dropdown-menu dropdown-menu-end of-visible">
-                            <div class="dropdown-header">
-                                <h4 class="title mb-0">Notification</h4>
-                                <a href="javascript:void(0);" class="d-none"><i class="flaticon-381-settings-6"></i></a>
-                            </div>
-                            <div id="DZ_W_Notification1" class="widget-media dlab-scroll p-3" style="height:380px;">
-                                <ul class="timeline">
-                                    <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2">
-                                                <img alt="image" width="50" src="{{url('/images/avatar/1.jpg')}}">
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2 media-info">
-                                                KG
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Resport created successfully</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2 media-success">
-                                                <i class="fa fa-home"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                     <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2">
-                                                <img alt="image" width="50" src="{{url('/
-                                                images/avatar/1.jpg')}}">
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2 media-danger">
-                                                KG
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Resport created successfully</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-panel">
-                                            <div class="media me-2 media-primary">
-                                                <i class="fa fa-home"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="all-notification" href="javascript:void(0);">See all notifications <i class="ti-arrow-end"></i></a>
+                            {{-- <div class="dropdown-header">
+                               
+                                <a href="javascript:void(0);" class="d-none"><i class="flaticon-381-focus"></i></a>
+                                <a class="btn btn-outline-dark" href="{{ route('plans.cart') }}">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+                                    <span class="badge text-bg-danger">{{ count((array) session('cart')) }}</span>
+                                </a>
+                            </div> --}}
+                           
+                           
+                               
+                                
                         </div>
                     </li>
-                    
                   
                     <li class="nav-item">
                         <div class="dropdown header-profile2">
@@ -267,7 +175,13 @@
                                     <div class="d-flex align-items-center sidebar-info">
                                         
                                     </div>
-                                    <img src="{{url('/images/user.jpg')}}" alt="">
+                                    @if ($profile->userpic)
+                                    <!-- Display uploaded image if available -->
+                                    <img src="/images/{{ $profile->userpic }}" alt="">
+                                @else
+                                    <!-- Display default image if no uploaded image -->
+                                    <img src="/images/no-img-avatar.png"alt="">
+                                @endif
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end pb-0" style="">
@@ -275,17 +189,23 @@
                                     <div class="card-header p-3">
                                         <ul class="d-flex align-items-center">
                                             <li>
-                                                <img src="{{url('/images/user.jpg')}}" class="ms-0" alt="">
+                                        @if ($profile->userpic)
+                                        <!-- Display uploaded image if available -->
+                                        <img src="/images/{{ $profile->userpic }}" class="ms-0" alt="">
+                                    @else
+                                        <!-- Display default image if no uploaded image -->
+                                        <img src="/images/no-img-avatar.png" class="ms-0" alt="">
+                                    @endif
                                             </li>
                                             <li class="ms-2">
-                                                <h4 class="mb-0">Nella Vita</h4>
+                                                <p class="mb-0">{{$profile->fname}} {{$profile->lname}}</p>
                                                 <span>Admin</span>
                                             </li>
                                         </ul>
 
                                     </div>
                                     <div class="card-body p-3">
-                                        <a href="app-profile.html" class="dropdown-item ai-icon ">
+                                        <a href="{{url('private_my_profile')}}" class="dropdown-item ai-icon ">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                     <polygon points="0 0 24 0 24 24 0 24"/>

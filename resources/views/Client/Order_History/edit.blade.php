@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Edit  Order History</h5>
-                        <a  href="{{ url('/order_historys') }}" class="btn btn-primary" style="margin-right: 10px;">
+                        <a  href="{{ url('/order_historys') }}" class="btn btn-primary" >
                             <i class="fa fa-close"></i> 
                         </a>
                     </div>

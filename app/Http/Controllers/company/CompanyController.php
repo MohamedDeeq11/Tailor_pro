@@ -10,7 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Encryption\DecryptException;
-
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class CompanyController extends Controller
 {
     /**
@@ -20,7 +21,10 @@ class CompanyController extends Controller
     {
         $pageTitle = 'Company';
         $companys=Company::latest()->paginate(5);
-        return view('company.company.index',compact('companys','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.company.index',compact('companys','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -30,7 +34,10 @@ class CompanyController extends Controller
     public function create(): View
     {
         $pageTitle = 'Company';
-        return view('company.company.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('company.company.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -97,7 +104,10 @@ class CompanyController extends Controller
             }
     
             $pageTitle = 'Company';
-            return view('company.company.edit', compact('company', 'pageTitle'));
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
+            return view('company.company.edit', compact('company', 'pageTitle','profile'));
         } catch (DecryptException $e) {
             return redirect()->back()->with('error', 'Invalid encrypted ID.');
         }

@@ -8,7 +8,24 @@
         <div class="row">
 
             <!-- Card for Payment Tier -->
-       
+            <script>
+                // Set the toastr options globally
+                toastr.options = {
+                    "timeOut": 4000,
+                    "progressBar" : true,
+                    "closeButton" : true,
+                };
+            
+                // Check if 'success' message is present in the session and show toastr
+                @if(Session::has('success'))
+                    toastr.success('{{ Session::get('success') }}', 'Success!');
+                @endif
+            
+                // Display an error toastr message if security questions are not answered
+                @if($errors->has('security_questions'))
+                    toastr.error('{{ $errors->first('security_questions') }}', 'Error');
+                @endif
+            </script>
             <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
                 <div class="widget-stat card bg-primary">
                     <div class="card-body p-4">

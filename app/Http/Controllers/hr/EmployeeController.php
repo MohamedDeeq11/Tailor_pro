@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class EmployeeController extends Controller
 {
     /**
@@ -19,7 +21,10 @@ class EmployeeController extends Controller
     {
         $pageTitle = 'Employee';
         $employees=Employee::latest()->paginate(5);
-        return view('hr.employee.index',compact('employees','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('hr.employee.index',compact('employees','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -29,7 +34,10 @@ class EmployeeController extends Controller
     public function create(): View
     {
         $pageTitle = 'Employee';
-        return view('hr.employee.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('hr.employee.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -78,7 +86,10 @@ class EmployeeController extends Controller
     
             $employee = Employee::find($id);
         $pageTitle = 'Employee';
-        return view('hr.employee.show',compact('employee','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('hr.employee.show',compact('employee','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -94,7 +105,10 @@ class EmployeeController extends Controller
     
             $employee = Employee::find($id);
         $pageTitle = 'Employee';
-        return view('hr.employee.edit',compact('employee','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('hr.employee.edit',compact('employee','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

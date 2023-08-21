@@ -4,103 +4,87 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<div class="row" style="width: 90%; margin-left: 18%; margin-top: 5%;">
-    <!-- Column starts -->
-    <div class="col-xl-11">
-        <div class="card" id="bootstrap-table4">
-            <div class="card-header flex-wrap d-flex justify-content-between border-0 px-3">
-                <div style="background-color: ">
-                    <br>
-                    <a href="{{ route('companys.create') }}" class="btn btn-primary" style="margin-right: 10px;" data-target="createCompanyForm">
-                        <i class="fa fa-plus"></i> Add New Company
-                    </a>
-                </div>
-            </div>
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const addButton = document.getElementById('addNewCompanyBtn');
+                // Set the toastr options globally
+                toastr.options = {
+                    "timeOut": 4000,
+                    "progressBar" :true,
+                    "closeButton" :true,
+
+                };
             
-                    addButton.addEventListener('click', function() {
-                        const targetFormId = addButton.getAttribute('data-target');
-                        const targetForm = document.getElementById(targetFormId);
-            
-                        targetForm.classList.toggle('show');
-                    });
-                });
+                // Check if 'success' message is present in the session and show toastr
+                @if(Session::has('success'))
+                    toastr.success('{{ Session::get('success') }}', 'Success!');
+                    @elseif (Session::has('error'))
+                    toastr.error('{{ Session::get('error') }}', 'Error!');
+                @endif
+
             </script>
-            <div class="tab-content" id="myTabContent-3">
-                <div class="tab-pane fade show active" id="withoutBorder" role="tabpanel" aria-labelledby="home-tab-3">
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <script>
-								// Set the toastr options globally
-								toastr.options = {
-									"timeOut": 4000,
-									"progressBar" :true,
-									"closeButton" :true,
-
-								};
-							
-								// Check if 'success' message is present in the session and show toastr
-								@if(Session::has('success'))
-									toastr.success('{{ Session::get('success') }}', 'Success!');
-                                    @elseif (Session::has('error'))
-									toastr.error('{{ Session::get('error') }}', 'Error!');
-								@endif
-
-							</script>
+            <div class="col-lg-12">
+                @foreach ($companys as $company)
+                <div class="profile card card-body px-3 pt-3 pb-0">
+                    <div class="profile-head">
+                        <div class="photo-content">
+                            <div class="cover-photo rounded">
+                                <img src="/images/company.jpg" width="1050px" height="243px">
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-photo">
+                                <img src="/images/{{ $company->LogoPic }}" class="img-fluid rounded-circle" alt="">
+                                {{-- <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt=""> --}}
+                            </div>
+                            <div class="profile-details">
+                                <div class="profile-name px-3 pt-2">
+                                   
+                                    <p>Company Name</p>
+                                    <h4 class="text-muted mb-0">{{ $company->Name }}</h4>
+                                </div>
+                                <div class="profile-email px-2 pt-2">
+                               
+                                    <p>Email</p>
+                                    <h4 class="text-muted mb-0">{{ $company->Email }}</h4>
+                                </div>
+                                <div class="profile-email px-2 pt-2">
+                                   
+                                    <p>Registered Date</p>
+                                    <h4 class="text-muted mb-0">{{ $company->Registered_date }}</h4>
+                                </div>
+                                <div class="profile-email px-2 pt-2">
+                                  
+                                    <p>Address</p>
+                                    <h4 class="text-muted mb-0">{{$company->address}}</h4>
+                                </div>
+                                <div class="profile-email px-2 pt-2">
+                                    <p>website</p>
+                                    <h4 class="text-muted mb-0">{{$company->website}}</h4>
+                                </div>
                             
-                            <table table id="example" class="display table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Logo Picture</th>
-                                        <th>Registered Date</th>
-                                        <th>Email</th>
-                                        <th>website</th>
-                                        <th>Address</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($companys as $company)
-                                    <tr>
-                                        <th>{{ $company->id }}</th>
-                                        <th>{{ $company->Name }}</th>
-                                        <th><img src="/images/{{ $company->LogoPic }}" width="30px"></th>
-                                        <td>{{ $company->Registered_date }}</td>
-                                        <td>{{ $company->Email }}</td>
-                                        <td>{{ $company->website }}</td>
-                                        <td>{{ $company->address }}</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                
-                                                <form action="{{ route('companys.destroy', $company->id) }}" method="POST">
-                                              
-                                                    <div class="d-flex">
-                                                        <a href="{{ route('companys.show', encrypt($company->id)) }}" class="btn btn-warning shadow btn-xs sharp me-1">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a>
-                                                        <a href="{{ route('companys.edit',encrypt($company->id)) }}" class="btn btn-primary shadow btn-xs sharp me-1">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        @csrf
-                                                    
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                <div class="dropdown ms-auto">
+                                    <div class="btn sharp btn-primary tp-btn" data-bs-toggle="dropdown">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li class="dropdown-item"> <a href="{{ route('companys.edit',encrypt($company->id)) }}" >
+                                            <i class="fa fa-pencil text-primary me-2"></i> Edit Company
+                                        </a></li>
+                                       
+                                 
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /tab-content -->
+            @endforeach
         </div>
+  
     </div>
 </div>
 @endsection

@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Add Revenue</h5>
-                        <a href="{{ url('/revenues') }}" class="btn btn-primary" style="margin-right: 10px;">
+                        <a href="{{ url('/revenues') }}" class="btn btn-primary" >
                             <i class="fa fa-close"></i>
                         </a>
                     </div>

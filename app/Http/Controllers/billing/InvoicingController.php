@@ -11,6 +11,8 @@ use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use App\Models\Company;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class InvoicingController extends Controller
 {
     /**
@@ -18,10 +20,13 @@ class InvoicingController extends Controller
      */
     public function index():View
     {
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
         $pageTitle = 'Invoicing';
         $invoicings=Invoicing::latest()->paginate(5);
         $companys=Company::latest()->paginate(5);
-        return view('billing.invoicing.index',compact('invoicings','pageTitle'))
+        return view('billing.invoicing.index',compact('invoicings','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +36,10 @@ class InvoicingController extends Controller
     public function create(Company $company): View
     {
         $pageTitle = 'Invoicing';
-        return view('billing.invoicing.create',compact('pageTitle','company'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('billing.invoicing.create',compact('pageTitle','company','profile'));
     }
 
     /**
@@ -71,7 +79,10 @@ class InvoicingController extends Controller
             
             $invoicing = Invoicing::find($id);
         $pageTitle = 'Invoicing';
-        return view('billing.invoicing.show',compact('invoicing','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('billing.invoicing.show',compact('invoicing','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -90,7 +101,10 @@ class InvoicingController extends Controller
           
     
             $pageTitle = 'Invoicing';
-            return view('billing.invoicing.edit',compact('invoicing','pageTitle'));
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
+            return view('billing.invoicing.edit',compact('invoicing','pageTitle','profile'));
         } catch (DecryptException $e) {
             return redirect()->back()->with('error', 'Invalid encrypted ID.');
         }

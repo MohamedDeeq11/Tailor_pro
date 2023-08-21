@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class ExpenseController extends Controller
 {
     /**
@@ -18,7 +20,10 @@ class ExpenseController extends Controller
     { 
         $pageTitle = 'Expenses';
         $expenses=Expense::latest()->paginate(5);
-        return view('Finance.Expenses.index',compact('expenses','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('Finance.Expenses.index',compact('expenses','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -29,7 +34,10 @@ class ExpenseController extends Controller
     public function create(): View
     {
         $pageTitle = 'Expenses';
-        return view('Finance.Expenses.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('Finance.Expenses.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -61,7 +69,10 @@ class ExpenseController extends Controller
     
             $expense = Expense::find($id);
         $pageTitle = 'Expenses';
-        return view('Finance.Expenses.show',compact('expense','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('Finance.Expenses.show',compact('expense','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -77,7 +88,10 @@ class ExpenseController extends Controller
     
             $expense = Expense::find($id);
             $pageTitle = 'Expenses';
-           return view('Finance.Expenses.edit',compact('expense','pageTitle'));
+            $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+            $profile = Admin::find($admin->id);
+           return view('Finance.Expenses.edit',compact('expense','pageTitle','profile'));
        } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

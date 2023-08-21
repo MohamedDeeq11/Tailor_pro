@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="content-body">
     <div class="container-fluid">
         <!-- Row -->
@@ -14,6 +16,25 @@
                                     <rect y="0.6521" width="261" height="275.13" rx="130.5" fill="#FCC43E"/>
                                 </svg>
                             </div>
+                            <script>
+                            // Set the toastr options globally
+                            toastr.options = {
+                                "timeOut": 4000,
+                                "progressBar" : true,
+                                "closeButton" : true,
+                            };
+                        
+                            // Check if 'success' message is present in the session and show toastr
+                            @if(Session::has('success'))
+                                toastr.success('{{ Session::get('success') }}', 'Success!');
+                            @endif
+                        
+                            // Display an error toastr message if security questions are not answered
+                            @if($errors->has('security_questions'))
+                                toastr.error('{{ $errors->first('security_questions') }}', 'Error');
+                            @endif
+                        </script>
+    
                             <div class="user-svg-1">
                                 <svg width="261" height="63" viewBox="0 0 261 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="261" height="275.13" rx="130.5" fill="#FB7D5B"/>
@@ -54,15 +75,19 @@
                             <div class="col-xl-3 col-xxl-6 col-sm-6">
                                 <ul class="student-details">
                                     <li class="me-2">
-                                        <a class="icon-box bg-secondary">
+                                        <a class="icon-box bg-primary">
                                             <img src="images/profile.svg" alt="">
                                         </a>
                                     </li>
                                     <li> 
                                         <span>Company Name</span>
-                                      
-                                            <h5 class="mb-0">{{$companys->Name}} </h5>
                                         
+                                        @if ($profile->company)
+                                        <h5 class="mb-0">{{ $profile->company->Name }}</h5>
+                                    @else
+                                        <p>No company information available</p>
+                                    @endif
+                                    
                                           
                                        
                                     </li>
@@ -73,7 +98,7 @@
                                 
                                 <ul class="student-details">
                                     <li class="me-2">
-                                        <a class="icon-box bg-secondary">
+                                        <a class="icon-box bg-primary">
                                             <img src="images/svg/location.svg" alt="">
                                         </a>	
 
@@ -84,7 +109,7 @@
                             <div class="col-xl-3 col-xxl-6 col-sm-6">
                                 <ul class="student-details">
                                     <li class="me-2">
-                                        <a class="icon-box bg-secondary">
+                                        <a class="icon-box bg-primary">
                                             <img src="images/svg/phone.svg" alt="">
                                         </a>	
                                     </li>
@@ -94,7 +119,7 @@
                             <div class="col-xl-3 col-xxl-6 col-sm-6">
                                 <ul class="student-details">
                                     <li class="me-2">
-                                        <a class="icon-box bg-secondary">
+                                        <a class="icon-box bg-primary">
                                             <img src="images/svg/email.svg" alt="">
                                         </a>	
                                     

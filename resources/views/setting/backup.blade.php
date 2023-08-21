@@ -4,9 +4,12 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<div class="row" style="width: 90%; margin-left: 18%; margin-top: 5%;">
+<div class="content-body " >
+  
+    <div class="container-fluid">
+        <div class="row" >
     <!-- Column starts -->
-    <div class="col-xl-11">
+    <div class="col-xl-12">
         <div class="card" id="bootstrap-table4">
             <div class="card-header flex-wrap d-flex justify-content-between border-0 px-3">
                 <div style="background-color: ">
@@ -51,5 +54,8 @@
             <!-- /tab-content -->
         </div>
     </div>
+</div>
+    </div>
+
 </div>
 @endsection

@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     /**
@@ -19,7 +21,10 @@ class ProductController extends Controller
     {
         $pageTitle = 'Product Details';
         $products=Product::latest()->paginate(5);
-        return view('product.product.index',compact('products','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product.index',compact('products','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -29,7 +34,10 @@ class ProductController extends Controller
     public function create(): View
     {
         $pageTitle = 'Product Details';
-        return view('product.product.create',compact('pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product.create',compact('pageTitle','profile'));
     }
 
     /**
@@ -68,7 +76,10 @@ class ProductController extends Controller
     
             $product = Product::find($id);
         $pageTitle = 'Product Details';
-        return view('product.product.show',compact('product','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product.show',compact('product','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }
@@ -83,7 +94,10 @@ class ProductController extends Controller
     
             $product = Product::find($id);
         $pageTitle = 'Product Details';
-        return view('product.product.edit',compact('product','pageTitle'));
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('product.product.edit',compact('product','pageTitle','profile'));
     } catch (DecryptException $e) {
         return redirect()->back()->with('error', 'Invalid encrypted ID.');
     }

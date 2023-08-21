@@ -59,7 +59,7 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="mb-0">Security</h5>
+                        <h5 class="mb-0">Security Questions</h5>
                     </div>
                     @if ($errors->any())
                         <!-- Error message display -->

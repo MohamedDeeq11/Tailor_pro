@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Order_History_Report;
 use Illuminate\Http\Request;
 use App\Models\Order_History;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class Order_History_ReportController extends Controller
 {
     /**
@@ -15,7 +17,10 @@ class Order_History_ReportController extends Controller
     {
         $pageTitle = 'Order History Report';
         $order_historys=Order_History::latest()->paginate(5);
-        return view('reports.order_history_report',compact('order_historys','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('reports.order_history_report',compact('order_historys','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

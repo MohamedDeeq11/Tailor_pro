@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\ProfitReport;
 use Illuminate\Http\Request;
 use App\Models\Profit;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 class ProfitReportController extends Controller
 {
     /**
@@ -15,7 +17,10 @@ class ProfitReportController extends Controller
     {
         $pageTitle = 'Profit Report';
         $profits=Profit::latest()->paginate(5);
-        return view('reports.profit_report',compact('profits','pageTitle'))
+        $admin = Auth::guard('admin')->user(); // Get the authenticated admin
+       
+        $profile = Admin::find($admin->id);
+        return view('reports.profit_report',compact('profits','pageTitle','profile'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -34,7 +34,7 @@ Sidebar start
 <div class="dlabnav" style="background-color: #cf9f17">
     
 <div class="nav-header">
-    <a href="index.html" class="brand-logo">
+    <a href="{{url('/dashboard')}}" class="brand-logo">
       	<img src="{{url('images/logo-w.png')}}" alt="" style="width:40px;heigh:40">
         <div class="brand-title">
             <img src="{{url('images/AL-06.png')}}" alt="" style="width:140px;heigh:30">
@@ -103,7 +103,7 @@ Sidebar start
             </a>
             <ul aria-expanded="false">
                 <li><a href="{{ url('/branchs') }}">Manage Branches</a></li>
-                <li><a href="teacher-detail.html">Bank Account</a></li>
+                <li><a href="teacher-detail.html">Payment Account</a></li>
             </ul>
         </li>
         <li>
@@ -199,7 +199,7 @@ Sidebar start
                     <span class="nav-text">Support Center</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./form-element.html">Support</a></li>
+                    <li><a href="{{url('https://support.huudtechnology.com')}}">Huud Support </a></li>
                 </ul>
             </li>
             <li>

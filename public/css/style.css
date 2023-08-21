@@ -14093,7 +14093,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebarbg="color_2"][data-sidebar-style="compact"] .dlabnav .metismenu li ul,
   [data-sidebarbg="color_2"][data-sidebar-style="icon-hover"][data-layout="horizontal"] .dlabnav .metismenu li ul,
   [data-sidebarbg="color_2"][data-sidebar-style="full"][data-layout="horizontal"] .dlabnav .metismenu li ul {
-    background-color: #6e66c6; }
+    background-color: #ebbd40; }
   [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="mini"] .dlabnav .metismenu > li.mm-active > a,
   [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="mini"] .dlabnav .metismenu > li:hover > a, [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="modern"] .dlabnav .metismenu > li.mm-active > a,
   [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="modern"] .dlabnav .metismenu > li:hover > a, [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="compact"] .dlabnav .metismenu > li.mm-active > a,
@@ -14127,7 +14127,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="compact"][data-layout="vertical"] .dlabnav .metismenu > li.mm-active > a i, [data-sidebarbg="color_2"][data-theme-version="dark"][data-sidebar-style="compact"][data-layout="vertical"] .dlabnav .metismenu > li:hover > a i,
     [data-sidebarbg="color_2"][data-sidebar-style="compact"][data-layout="vertical"] .dlabnav .metismenu > li.mm-active > a i,
     [data-sidebarbg="color_2"][data-sidebar-style="compact"][data-layout="vertical"] .dlabnav .metismenu > li:hover > a i {
-      background: #6e66c6 !important;
+      background: #ebbd40 !important;
       color: #fff !important; }
   [data-sidebarbg="color_2"][data-theme-version="dark"] .dlabnav .metismenu a,
   [data-sidebarbg="color_2"] .dlabnav .metismenu a {
@@ -14167,7 +14167,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       color: #fff; }
   [data-sidebarbg="color_2"][data-theme-version="dark"] .plus-box,
   [data-sidebarbg="color_2"] .plus-box {
-    background-color: #6e66c6; }
+    background-color: #ebbd40; }
   [data-sidebarbg="color_2"][data-theme-version="dark"] .copyright,
   [data-sidebarbg="color_2"] .copyright {
     color: #fff; }
@@ -15711,7 +15711,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --headerbg: #cf9f17; }
   [data-headerbg="color_2"][data-theme-version="dark"] .header.is-fixed,
   [data-headerbg="color_2"] .header.is-fixed {
-    border-color: #6e66c6 !important; }
+    border-color: #ebbd40 !important; }
   [data-headerbg="color_2"][data-theme-version="dark"] .header,
   [data-headerbg="color_2"] .header {
     border: 0; }
@@ -15730,8 +15730,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 					} */ }
     [data-headerbg="color_2"][data-theme-version="dark"] .header-right .notification_dropdown .nav-link,
     [data-headerbg="color_2"] .header-right .notification_dropdown .nav-link {
-      background-color: #6e66c6;
-      border-color: #6e66c6; }
+      background-color: #ebbd40;
+      border-color: #ebbd40; }
       [data-headerbg="color_2"][data-theme-version="dark"] .header-right .notification_dropdown .nav-link .setting-svg path,
       [data-headerbg="color_2"] .header-right .notification_dropdown .nav-link .setting-svg path {
         fill: #fff; }
@@ -15757,14 +15757,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       color: #000; }
     [data-headerbg="color_2"][data-theme-version="dark"] .header-right .bootstrap-select .btn,
     [data-headerbg="color_2"] .header-right .bootstrap-select .btn {
-      background-color: #6e66c6 !important; }
+      background-color: #ebbd40 !important; }
     [data-headerbg="color_2"][data-theme-version="dark"] .header-right .bootstrap-select.countrypicker,
     [data-headerbg="color_2"] .header-right .bootstrap-select.countrypicker {
-      border-color: #6e66c6 !important; }
+      border-color: #ebbd40 !important; }
     [data-headerbg="color_2"][data-theme-version="dark"] .header-right .bootstrap-select .btn,
     [data-headerbg="color_2"] .header-right .bootstrap-select .btn {
       color: #fff !important;
-      border-color: #6e66c6 !important; }
+      border-color: #ebbd40 !important; }
   [data-headerbg="color_2"][data-theme-version="dark"] .hamburger .line,
   [data-headerbg="color_2"] .hamburger .line {
     background-color: #fff !important; }

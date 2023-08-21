@@ -50,7 +50,7 @@
         </div>
 
         <!-- Update Button -->
-        <button class="btn btn-primary">Update Bayment </button>
+        <button class="btn btn-primary">Update payment </button>
     </div>
 </div>
 

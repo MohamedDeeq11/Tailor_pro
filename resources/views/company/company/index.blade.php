@@ -31,7 +31,7 @@
                     <div class="profile-head">
                         <div class="photo-content">
                             <div class="cover-photo rounded">
-                                <img src="/images/company.jpg" width="1050px" height="243px">
+                                <img src="/images/company.jpg" style="height: 250px; width:100%;">
                             </div>
                         </div>
                         <div class="profile-info">
